@@ -19,6 +19,9 @@ const ReactTwitter = () => {
           <Comment comment={comment} key={comment.id} user={this.props.user} />
         ))}
       </div>
+      <div>
+        <AddComment addComment={this.addComment} user={this.state.user} />
+      </div>
     </div>
   );
 };
