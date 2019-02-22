@@ -31,7 +31,9 @@ class App extends Component {
         this.setState({ user });
       }
     });
-    this.firebaseEvents();
+  }
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
   logout() {
     auth.signOut().then(() => {
@@ -48,12 +50,13 @@ class App extends Component {
       for (let key in comments) {
         newState.push({
           id: key,
-          user: posts[key].user,
-          userId: posts[key].userId,
-          userImage: posts[key].userImage,
-          title: posts[key].title,
-          content: posts[key].content,
-          time: posts[key].time,
+          project: comments[key].project,
+          user: comments[key].user,
+          userId: comments[key].userId,
+          userImage: comments[key].userImage,
+          title: comments[key].title,
+          content: comments[key].content,
+          time: comments[key].time,
         });
       }
       this.setState({
@@ -70,7 +73,30 @@ class App extends Component {
       });
     });
   }
+  addComment = comment => {
+    const commentsRef = firebase.database().ref("comments");
+    commentsRef.push(comment);
+    setTimeout(() => {
+      this.fetchData();
+    }, 200)
+  };
 
+  deleteComment = comment => {
+    const commentRef = firebase.database().ref("comments/" + comment.id);
+    commentRef.remove();
+    setTimeout(() => {
+      this.fetchData();
+    }, 200)
+  }
+
+  editComment = comment => {
+    const commentRef = firebase.database().ref("comments/" + comment.id);
+
+    commentRef.update(comment);
+    setTimeout(() => {
+      this.fetchData();
+    }, 200)
+  }
   render() {
     return (
       <BrowserRouter>
