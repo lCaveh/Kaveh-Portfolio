@@ -107,7 +107,9 @@ class App extends Component {
             <Route path="/JavascriptProjects" component={JavascriptProjects} />
             <Route path="/AngularProjects" component={AngularProjects} />
             <Route path="/ReactProjects" component={ReactProjects} />
-            <Route path="/ReactTwitter" component={ReactTwitter} />
+            <Route path="/ReactTwitter" component={ReactTwitter} 
+            comments={this.state.comments}
+            user={this.state.user}/>
             <Route component={Error} />
           </Switch>
         </div>

@@ -37,31 +37,9 @@ class Comment extends React.Component {
                             </div>
 
                             <div className="clickable-info">
-                                <span>
-                                    <b> {this.props.comment.likes}</b>
-                                </span>
-                                <span
-                                    onClick={() => {
-                                        this.props.addLikes(this.props.comment);
-                                    }}
-                                    className="thumb">
-                                    👍
-                                    </span>
+                                
 
-                                <span>
-                                    <b> {this.props.comment.dislikes}</b>
-                                </span>
-                                <span onClick={() => {
-                                    this.props.addDislikes(this.props.comment);
-                                }}
-                                    className="thumb">
-
-
-
-                                    👎
-                                </span>
-
-                                {this.props.editcomment ?
+                                {this.props.editComment ?
                                     <span>
 
                                         <span
@@ -69,28 +47,23 @@ class Comment extends React.Component {
                                             className="thumb">
                                             🖋
                                         </span>
-                                        <span onClick={() => { this.props.deletecomment(this.props.comment) }}
+                                        <span onClick={() => { this.props.deleteComment(this.props.comment) }}
                                             className="thumb">
                                             🗑
                                      </span>
                                     </span> : <span></span>}
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
 
                 {(this.state.editAccess) ?
                     <div>
-                        <Editcomment user={this.props.user} comment={this.props.comment} editcomment={this.props.editcomment}></Editcomment>
+                        <EditComment user={this.props.user} comment={this.props.comment} editComment={this.props.editcomment}></EditComment>
                     </div> : <div></div>
                 }
-
-
             </div>
-
         )
     }
 }
