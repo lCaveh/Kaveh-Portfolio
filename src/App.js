@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import JavascriptProjects from "./components/JavascriptProjects";
 import AngularProjects from "./components/AngularProjects";
 import ReactProjects from "./components/ReactProjects";
+import ReactTwitter from "./components/ReactTwitter";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/JavascriptProjects" component={JavascriptProjects} />
             <Route path="/AngularProjects" component={AngularProjects} />
             <Route path="/ReactProjects" component={ReactProjects} />
+            <Route path="/ReactTwitter" component={ReactTwitter} />
             <Route component={Error} />
           </Switch>
         </div>
