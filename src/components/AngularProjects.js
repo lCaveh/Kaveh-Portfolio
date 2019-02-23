@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
 const AngularProjects = () => {
-    return (
-        <div>
-            <p>AngularProjects</p>
-        </div>
-    )
-}
+  return (
+    <div>
+      <p>AngularProjects</p>
+    </div>
+  );
+};
 
 export default AngularProjects;

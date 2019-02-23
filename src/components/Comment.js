@@ -6,7 +6,7 @@ class Comment extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editAccess: false,
+            editAccess: false
         }
     }
 
@@ -39,7 +39,7 @@ class Comment extends React.Component {
                             <div className="clickable-info">
                                 
 
-                                {this.props.editComment ?
+                                {(this.props.user.uid===this.props.comment.userId) ?
                                     <span>
 
                                         <span
@@ -60,7 +60,7 @@ class Comment extends React.Component {
 
                 {(this.state.editAccess) ?
                     <div>
-                        <EditComment user={this.props.user} comment={this.props.comment} editComment={this.props.editcomment}></EditComment>
+                        <EditComment user={this.props.user} comment={this.props.comment} editComment={this.props.editComment}></EditComment>
                     </div> : <div></div>
                 }
             </div>

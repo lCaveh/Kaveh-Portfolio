@@ -8,17 +8,13 @@ class CommentForm extends React.Component {
     event.preventDefault();
     const comment = {
       id: "",
+      project: this.props.project,
       title: this.titleRef.current.value,
       user: this.props.user.displayName,
       userId: this.props.user.uid,
       userImage: this.props.user.photoURL,
       content: this.contentRef.current.value,
-      likes: 0,
-      likedBy: [""],
-      dislikes: 0,
-      dislikedBy: [""],
       time: `commented: ${new Date().toDateString()} - ${new Date().getHours()} : ${new Date().getMinutes()} : ${new Date().getSeconds()}`,
-      timeId: Date.parse(new Date())
     };
     this.props.addComment(comment);
     this.titleRef.current.value = "";

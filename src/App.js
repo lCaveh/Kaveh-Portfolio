@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import '../node_modules/uikit/dist/css/uikit.css';
+import React, { Component } from "react";
+import "./App.css";
+import "../node_modules/uikit/dist/css/uikit.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Error from "./components/Error";
@@ -12,7 +12,6 @@ import ReactTwitter from "./components/ReactTwitter";
 import base from "./firebase";
 import firebase, { auth, provider } from "./firebase.js";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -20,8 +19,8 @@ class App extends Component {
       comments: [],
       user: null
     };
-    this.login = this.login.bind(this); 
-    this.logout = this.logout.bind(this); 
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
   componentDidMount() {
     this.fetchData();
@@ -56,12 +55,11 @@ class App extends Component {
           userImage: comments[key].userImage,
           title: comments[key].title,
           content: comments[key].content,
-          time: comments[key].time,
+          time: comments[key].time
         });
       }
       this.setState({
         comments: newState
-        
       });
     });
   }
@@ -78,7 +76,7 @@ class App extends Component {
     commentsRef.push(comment);
     setTimeout(() => {
       this.fetchData();
-    }, 200)
+    }, 200);
   };
 
   deleteComment = comment => {
@@ -86,8 +84,8 @@ class App extends Component {
     commentRef.remove();
     setTimeout(() => {
       this.fetchData();
-    }, 200)
-  }
+    }, 200);
+  };
 
   editComment = comment => {
     const commentRef = firebase.database().ref("comments/" + comment.id);
@@ -95,21 +93,34 @@ class App extends Component {
     commentRef.update(comment);
     setTimeout(() => {
       this.fetchData();
-    }, 200)
-  }
+    }, 200);
+  };
   render() {
     return (
       <BrowserRouter>
         <div>
-          <NavBar />
+          <NavBar
+            login={this.login}
+            logout={this.logout}
+            user={this.state.user}
+          />
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/JavascriptProjects" component={JavascriptProjects} />
             <Route path="/AngularProjects" component={AngularProjects} />
             <Route path="/ReactProjects" component={ReactProjects} />
-            <Route path="/ReactTwitter" component={ReactTwitter} 
-            comments={this.state.comments}
-            user={this.state.user}/>
+            <Route
+              path="/ReactTwitter"
+              render={() => (
+                <ReactTwitter
+                  comments={this.state.comments}
+                  user={this.state.user}
+                  addComment={this.addComment}
+                  editComment={this.editComment}
+                  deleteComment={this.deleteComment}
+                />
+              )}
+            />
             <Route component={Error} />
           </Switch>
         </div>

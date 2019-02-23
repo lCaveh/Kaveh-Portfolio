@@ -16,9 +16,7 @@ const ReactProjects = () => {
               <img className= "react-twitter"src={ReactTwitterImage} alt="" />
             </NavLink>
             <p>
-              Here is the Angular section where I used Angular framework, JS
-              libraries like Typescript and Firebase database to create some
-              good looking web applications
+
             </p>
           </div>
         </div>
