@@ -4,6 +4,7 @@ import Umbrellas from "../img/umbrellas.jpg";
 import { NavLink } from "react-router-dom"
 
 UIkit.parallax();
+UIkit.sticky();
 
 const backStyle = {
   backgroundImage: `url(${Umbrellas})`

@@ -104,26 +104,35 @@ const Home = () => {
         </div>
       </div>
       <button
-        className="uk-button uk-button-default uk-margin-small-right"
+        className="uk-button uk-button-default uk-margin-small-right contact"
         type="button"
-        data-uk-toggle="target: #offcanvas-push"
+        data-uk-toggle="target: #offcanvas-reveal"
       >
         Contact
       </button>
-      <br />
-      <br />
-      <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+      <div
+        id="offcanvas-reveal"
+        data-uk-offcanvas="mode: reveal; overlay: true"
+      >
         <div className="uk-offcanvas-bar">
           <button className="uk-offcanvas-close" type="button" data-uk-close />
           <h3>WANT TO GET IN TOUCH?</h3>
-          <br />
-          <a href="https://github.com/lCaveh">My Github Account</a>
-          <br />
-          <a href="https://www.linkedin.com/in/kaveh-saleminejad">
+          <hr />
+          <a target="_blank" href="https://github.com/lCaveh">
+            My Github Account
+          </a>
+          <hr />
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/kaveh-saleminejad"
+          >
             My Linkedin Account
           </a>
-          <br />
-          <a href="mailto:lcaveh@gmail.com">My Email Address</a>
+          <hr />
+          <a target="_blank" href="mailto:lcaveh@gmail.com">
+            My Email Address
+          </a>
+          <hr />
         </div>
       </div>
     </div>

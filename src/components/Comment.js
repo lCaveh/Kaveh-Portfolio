@@ -24,11 +24,11 @@ class Comment extends React.Component {
           >
             <div className="uk-width-auto">
               <img
-                className="uk-comment-avatar"
+                className="uk-comment-avatar uk-border-circle"
                 src={this.props.comment.userImage}
                 width="80"
                 height="80"
-                alt=""
+                alt="Border circle"
               />
             </div>
             <div className="uk-width-expand">
