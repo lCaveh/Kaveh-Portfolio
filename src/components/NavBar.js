@@ -1,6 +1,7 @@
 import React from "react";
 import UIkit from "uikit";
 import Umbrellas from "../img/umbrellas.jpg";
+import { NavLink } from "react-router-dom"
 
 UIkit.parallax();
 
@@ -11,22 +12,26 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="uk-container">
-        <br />
-        <nav className="uk-navbar-container" data-uk-navbar>
+        <nav className="uk-navbar uk-navbar-container uk-margin">
           <div className="uk-navbar-left">
-            <ul className="uk-navbar-nav">
-              <li className="uk-active">
-                {!this.props.user ? (
+            <NavLink to="/" className="uk-navbar-toggle">Home</NavLink>
+          </div>
+          {/* <div className="uk-navbar-left">
+            <NavLink to="/About" className="uk-navbar-toggle">About</NavLink>
+          </div> */}
+          <div className="uk-navbar-right">
+            <span className="uk-navbar-toggle">{!this.props.user ? (
                   <span onClick={this.props.login}>LogIn</span>
                 ) : (
                   <span onClick={this.props.logout}>
                     {this.props.user.displayName}{" "}
                   </span>
-                )}
-              </li>
-            </ul>
+                )}</span>
           </div>
         </nav>
+
+        <br />
+
         <div
           className="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top"
           style={backStyle}

@@ -1,4 +1,6 @@
 import React from "react";
+import UIkit from "uikit";
+
 
 class CommentForm extends React.Component {
   contentRef = React.createRef();
@@ -19,34 +21,31 @@ class CommentForm extends React.Component {
     this.props.addComment(comment);
     this.titleRef.current.value = "";
     this.contentRef.current.value = "";
+    UIkit.notification({message: `Thank you ${this.props.user.displayName} for your comment👍🏻`, pos: 'top-right', status: 'success'});
   };
   render() {
     return (
-      <div className="commentForm">
+      <div className="commentForm uk-container">
         {this.props.user ? (
-          <form className="form-group" onSubmit={this.createComment}>
-            <h3>Add New comment</h3>
-            <label htmlFor="title">Title:</label>
-            <br />
-            <input ref={this.titleRef} type="text" />
-            <br />
-            <label htmlFor="content">Content: </label>
-            <br />
-            <textarea
-              ref={this.contentRef}
-              name="content"
-              id=""
-              cols="30"
-              rows="5"
-            />{" "}
-            <br />
-            <button className="btn btn-lg btn-primary" type="submit">
-              Submit
-            </button>
-          </form>
+          <form onSubmit={this.createComment}>
+    <div className="uk-margin">
+        <label className="uk-form-label">Title</label>
+        <div className="uk-form-controls">
+            <input ref={this.titleRef} className="uk-input" id="form-stacked-text" type="text" placeholder="Title..." required/>
+        </div>
+    </div>
+    <div className="uk-margin">
+        <label className="uk-form-label">Content</label>
+        <div className="uk-form-controls">
+        <textarea ref={this.contentRef} name="content" rows="5" className="uk-textarea" placeholder="Content..." required></textarea>
+        </div>
+    </div>
+          <button type="submit" className="uk-button uk-button-text">Submit</button>
+      </form>
         ) : (
           <span />
         )}
+        <br/><br/><br/>
       </div>
     );
   }
