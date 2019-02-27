@@ -15,20 +15,20 @@ const Home = () => {
         <div className="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
           <h3 className="uk-card-title">Hi, I'm Kaveh. Nice to meet you. </h3>
           <p>
-            I started to learn Web Developing since I felt a great passion
-            inside myslef in coding.
+            I began to learn Web Developing since I felt a great passion
+            about coding.
           </p>
           <p>
-            At first,I tried to figure out how a web application works
-            individualy
+            At first,I tried to figure out how web application works
+            by my self
           </p>
           <p>
-            It went really good at the beginnig, but soon I realized that I need
-            a place to learn it in a principal way
+            It went really good in the beginnig, but soon I realized that I need
+            to learn it academically
           </p>
           <p>
-            Then I attend Epicodus web developement bootcamp, and my journey as
-            a web developer started ...
+            Then I attended Epicodus web developement bootcamp, and my journey as
+            a web developer began ...
           </p>
         </div>
       </div>
@@ -119,18 +119,22 @@ const Home = () => {
           <h3>WANT TO GET IN TOUCH?</h3>
           <hr />
           <a target="_blank" href="https://github.com/lCaveh">
-            My Github Account
+            Github Repository
           </a>
           <hr />
           <a
             target="_blank"
             href="https://www.linkedin.com/in/kaveh-saleminejad"
           >
-            My Linkedin Account
+            Linkedin Page
           </a>
           <hr />
           <a target="_blank" href="mailto:lcaveh@gmail.com">
-            My Email Address
+            Resume
+          </a>
+          <hr />
+          <a target="_blank" href="mailto:lcaveh@gmail.com">
+            Email Address
           </a>
           <hr />
         </div>
