@@ -41,7 +41,7 @@ const Home = () => {
           <p>Web Fundamentals: Html, CSS, Javascript</p>
           <p>
             Javascript libraries and other languages: Bootstrap, UIkit, jQuery,
-            Typescript, React, C#
+            Typescript, React, Redux, C#
           </p>
           <p>frameworks: .Net, Angular, NodeJs, Webpack</p>
           <p>Databases: MySQL, Firebase</p>
@@ -86,7 +86,7 @@ const Home = () => {
             </NavLink>
             <p>
               Here is some of my project using React for front end. I used
-              different languages like C# for back end there.
+              different languages like C# for back end in some of them.
             </p>
           </div>
         </div>
@@ -129,7 +129,7 @@ const Home = () => {
             Linkedin Page
           </a>
           <hr />
-          <a target="_blank" href="mailto:lcaveh@gmail.com">
+          <a target="_blank" href="https://docs.google.com/document/d/1dIu3Ngdg_53eWpjWlq8joL43SjkipIag1GZRIvw8iXA/edit?usp=sharing">
             Resume
           </a>
           <hr />
