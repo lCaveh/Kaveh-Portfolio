@@ -1,9 +1,10 @@
 import React from "react";
 import UIkit from "uikit";
 import AngularLogo from "../img/angular-logo.png";
-import JSLogo from "../img/js-logo.png";
+import RRLogo from "../img/react-redux.jpeg";
 import ReactLogo from "../img/react-logo.png";
 import { NavLink } from "react-router-dom";
+
 UIkit.parallax();
 UIkit.grid();
 
@@ -52,7 +53,7 @@ const Home = () => {
         <div className="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
           <h3 className="uk-card-title ">And finally about my design method</h3>
           <p>
-            I believe in minimalism. I don't think a well design webpage should
+            I believe in minimalism at web developement. I don't think a well design webpage should
             be filled with lots of elements.
           </p>
           <p>
@@ -69,12 +70,12 @@ const Home = () => {
       >
         <div>
           <div className="uk-card uk-card-default uk-card-body uk-grid-margin">
-            <NavLink to="/JavascriptProjects">
-              <img src={JSLogo} alt="" />
+            <NavLink to="/ReactReduxProjects">
+              <img src={RRLogo} alt="" />
             </NavLink>
             <p>
-              Here is some of my projects that were written by Javascript. I
-              used MySQL database for most of them.
+              Here is some of my projects that were written by React and Redux. 
+              I used Firebase for database, authentication, and deploy live project in most of them.
             </p>
             <p />
           </div>

@@ -1,11 +1,11 @@
 import React from "react";
-import ReactTwitterImage from "../img/React-Twitter.png";
+import PhotogramImage from "../img/Photogram.png";
 import Comment from "./Comment";
 import AddComment from "./AddComment";
 
-class ReactTwitter extends React.Component {
+class Photogram extends React.Component {
   render() {
-    let project = "React-Twitter";
+    let project = "Photogram";
     return (
       <div className="uk-container">
         <br />
@@ -16,37 +16,39 @@ class ReactTwitter extends React.Component {
                 <div className="uk-inline-clip uk-transition-toggle">
                   <img
                     className="uk-transition-scale-up uk-transition-opaque"
-                    src={ReactTwitterImage}
+                    src={PhotogramImage}
                     alt=""
                   />
                 </div>
                 <hr />
                 <a
                   target="_blank"
-                  href="https://react-twitter-f9154.firebaseapp.com/"
+                  href="https://photogram-46a24.firebaseapp.com"
                 >
-                  Check live React-Twitter project deployed on Firebase
+                  Check live Photogram project deployed on Firebase
                 </a>
               </div>
               <hr />
               <h2>Project Description:</h2>
-              <p>Contributor: James Cho</p>
-              <p>Project's Purpose or Goal: A simple Twitter application</p>
+              <p>
+                Project's Purpose or Goal: A social media application to show
+                photos and discuss about them
+              </p>
               <p>List of features:</p>
               <ul>
                 <li>
-                  It allows users and guest to see the list of all twitts and
-                  filter them based on time,likes, or dislikes.
+                  It allows users and guest to see the list of all posts by
+                  clicking on "All Post" tap which fixed at bottom of view.
                 </li>
                 <li>
-                  It lets clients to login with their Google account to be able
-                  create,edit, and delete their own twitts. They also could like
-                  or dislike other's twitts as well.
+                  Clients could login into app with their Google account to get
+                  access to more features like creating post, like other's post,
+                  or make a comment for them.
                 </li>
                 <li>
-                  It listen to the database update, and if any user create or
-                  delete a twitt, it will inform all other users by sending a
-                  self destruct alert named tostr.
+                  It allows users to browse images inside their devices
+                  (Computer, tablet, or cellphones), upload them into firebase
+                  storage and make a new post by them.
                 </li>
               </ul>
               <p>List of tools, libraries, framework, database:</p>
@@ -54,6 +56,7 @@ class ReactTwitter extends React.Component {
                 <li>Node Js, Create-React-App</li>
                 <li>Javascript</li>
                 <li>React</li>
+                <li>Redux</li>
                 <li>Firebase</li>
                 <li>UIKit</li>
               </ul>
@@ -63,14 +66,14 @@ class ReactTwitter extends React.Component {
             <div>
               {this.props.comments.map(comment => (
                 <div key={comment.id}>
-                  {comment.project === "React-Project" ? (
+                  {comment.project === "Photogram" ? (
                     <div>
                       <Comment
                         comment={comment}
                         user={this.props.user}
                         editComment={this.props.editComment}
                         deleteComment={this.props.deleteComment}
-                        project="React-Project"
+                        project="Photogram"
                       />
                       <br />
                     </div>
@@ -84,7 +87,7 @@ class ReactTwitter extends React.Component {
               <AddComment
                 addComment={this.props.addComment}
                 user={this.props.user}
-                project="React-Project"
+                project="Photogram"
               />
             </div>
           </div>
@@ -94,4 +97,4 @@ class ReactTwitter extends React.Component {
   }
 }
 
-export default ReactTwitter;
+export default Photogram;

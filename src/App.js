@@ -5,10 +5,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Error from "./components/Error";
 import NavBar from "./components/NavBar";
-import JavascriptProjects from "./components/JavascriptProjects";
+import ReactReduxProjects from "./components/ReactReduxProjects";
 import AngularProjects from "./components/AngularProjects";
 import ReactProjects from "./components/ReactProjects";
 import ReactTwitter from "./components/ReactTwitter";
+import Photogram from "./components/Photogram";
 import base from "./firebase";
 import firebase, { auth, provider } from "./firebase.js";
 
@@ -106,13 +107,25 @@ class App extends Component {
           />
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/JavascriptProjects" component={JavascriptProjects} />
+            <Route path="/ReactReduxProjects" component={ReactReduxProjects} />
             <Route path="/AngularProjects" component={AngularProjects} />
             <Route path="/ReactProjects" component={ReactProjects} />
             <Route
               path="/ReactTwitter"
               render={() => (
                 <ReactTwitter
+                  comments={this.state.comments}
+                  user={this.state.user}
+                  addComment={this.addComment}
+                  editComment={this.editComment}
+                  deleteComment={this.deleteComment}
+                />
+              )}
+            />
+            <Route
+              path="/Photogram"
+              render={() => (
+                <Photogram
                   comments={this.state.comments}
                   user={this.state.user}
                   addComment={this.addComment}
